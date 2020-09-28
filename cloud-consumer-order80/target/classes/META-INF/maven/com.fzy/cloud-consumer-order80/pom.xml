@@ -7,8 +7,7 @@
 		<artifactId>springcloud</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>cloud-provider-payment8001</artifactId>
-
+	<artifactId>cloud-consumer-order80</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>com.fzy</groupId>
@@ -22,26 +21,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>druid-spring-boot-starter</artifactId>
-			<version>1.1.20</version>
-			<!--子工程写了版本号，就使用子工程的版本号，如果没写版本,找父工程中规定的版本号 -->
-		</dependency>
-		<!--mysql-connector-java -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-		</dependency>
-		<!--jdbc -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
 		<!--热部署 -->
 		<dependency>
