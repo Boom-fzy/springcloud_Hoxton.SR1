@@ -20,7 +20,7 @@ public class OrderController {
 	@Resource
 	private RestTemplate restTemplate;
 
-	public static final String PAYMENT_URL = "http://localhost:8001";
+	public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
 	// 因为浏览器只支持get请求，为了方便这里就用get
 	@GetMapping("/consumer/payment/create")
