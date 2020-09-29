@@ -1,0 +1,7 @@
+server:
+  port: 80
+  
+spring:  application:    name: cloud-consumer-order
+  cloud:    consul:      host: 127.0.0.1
+      port: 8500      discovery:
+        hostname: 127.0.0.1        service-name: ${spring.application.name}
