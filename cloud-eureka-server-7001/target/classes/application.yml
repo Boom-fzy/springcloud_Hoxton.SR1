@@ -5,6 +5,6 @@ eureka:  instance:    hostname: eureka7001.com
   client:    register-with-eureka: false
     fetch-registry: false
     service-url:      defaultZone: http://eureka7002.com:7002/eureka/
-  server:
-    enable-self-preservation: false #eureka自我保护
-    eviction-interval-timer-in-ms: 2000 #服务剔除时间
+#  server:
+#    enable-self-preservation: false #eureka自我保护
+#    eviction-interval-timer-in-ms: 2000 #服务剔除时间
