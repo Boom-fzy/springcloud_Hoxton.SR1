@@ -1,6 +1,7 @@
 package com.fzy.controller;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Resource;
 
@@ -29,7 +30,7 @@ public class PaymentController {
 
 	@Value("${server.port}")
 	private String serverPort;
-	
+
 	@Resource
 	private DiscoveryClient discoveryClient;
 
@@ -61,22 +62,34 @@ public class PaymentController {
 	@GetMapping("/payment/discovery")
 	public Object discovery() {
 		List<String> services = discoveryClient.getServices();
-		
+
 		for (String element : services) {
-			log.info("*******element" +element);
+			log.info("*******element" + element);
 		}
 		List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
-		
+
 		for (ServiceInstance serviceInstance : instances) {
-			log.info(serviceInstance.getInstanceId() + "\t"+serviceInstance.getHost()+"\t" +serviceInstance.getPort()+"\t"+serviceInstance.getUri());
+			log.info(serviceInstance.getInstanceId() + "\t" + serviceInstance.getHost() + "\t"
+					+ serviceInstance.getPort() + "\t" + serviceInstance.getUri());
 		}
-		
+
 		return this.discoveryClient;
-		
+
 	}
-	
+
 	@GetMapping("/payment/lb")
 	public String getPaymentLB() {
 		return serverPort;
 	}
+
+	@GetMapping("/payment/feign/timeout")
+	public String paymentFeignTimeout() {
+		try {
+			TimeUnit.SECONDS.sleep(3);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		return serverPort;
+	}
+
 }
