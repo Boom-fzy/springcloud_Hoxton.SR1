@@ -17,4 +17,6 @@ eureka:  client:    register-with-eureka: true
   instance:    instance-id: payment8001
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 1 #eureka客户端发送心跳的时间间隔
-    lease-expiration-duration-in-seconds: 2 #eureka服务端收到最后一次心跳后等待时间上线    
+    lease-expiration-duration-in-seconds: 2 #eureka服务端收到最后一次心跳后等待时间上线
+    
+    
