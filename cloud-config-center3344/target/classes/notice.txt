@@ -1,0 +1,2 @@
+定点通知，更新配置信息
+curl -X POST "http://localhost:3344/actuator/bus-refresh/config-client:3355"
