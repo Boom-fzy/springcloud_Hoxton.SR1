@@ -4,4 +4,5 @@ server:
 spring:  application:    name: nacos-order-consumer
   cloud:    nacos:      discovery:        server-addr: localhost:8848
 
-service-URL: http://nacos-payment-provider
+service-URL: 
+  service-payment-url: http://nacos-payment-provider
